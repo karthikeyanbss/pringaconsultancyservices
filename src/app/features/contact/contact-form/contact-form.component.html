@@ -1,4 +1,14 @@
 <form [formGroup]="contactForm" (ngSubmit)="submit()" class="contact-form-root">
+  <!-- Success Message -->
+  <div *ngIf="submitSuccess" class="form-success">
+    ✓ Your message has been sent successfully!
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="submitError" class="form-error-banner">
+    ✕ {{ submitError }}
+  </div>
+
   <div class="form-group">
     <label for="name" class="form-label">Your name <span class="required">*</span></label>
     <input
@@ -8,6 +18,7 @@
       placeholder="John Doe"
       class="form-input"
       [class.invalid]="contactForm.get('name')?.touched && contactForm.get('name')?.invalid"
+      [disabled]="isSubmitting"
     />
     <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" class="form-error">
       ⚠ Name is required (minimum 2 characters)
@@ -23,6 +34,7 @@
       placeholder="john@example.com"
       class="form-input"
       [class.invalid]="contactForm.get('email')?.touched && contactForm.get('email')?.invalid"
+      [disabled]="isSubmitting"
     />
     <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" class="form-error">
       ⚠ Valid email is required
@@ -37,6 +49,7 @@
       formControlName="subject"
       placeholder="Project Inquiry"
       class="form-input"
+      [disabled]="isSubmitting"
     />
   </div>
 
@@ -49,11 +62,19 @@
       rows="5"
       class="form-textarea"
       [class.invalid]="contactForm.get('message')?.touched && contactForm.get('message')?.invalid"
+      [disabled]="isSubmitting"
     ></textarea>
     <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" class="form-error">
       ⚠ Message must be at least 10 characters
     </div>
   </div>
 
-  <button type="submit" class="btn primary form-submit" [disabled]="contactForm.invalid">Send Message</button>
+  <button 
+    type="submit" 
+    class="btn primary form-submit" 
+    [disabled]="contactForm.invalid || isSubmitting"
+  >
+    <span *ngIf="!isSubmitting">Send Message</span>
+    <span *ngIf="isSubmitting">Sending...</span>
+  </button>
 </form>
