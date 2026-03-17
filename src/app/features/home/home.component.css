@@ -1,0 +1,9 @@
+.services-grid{padding:28px}
+.services-grid .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+
+.founders{padding:28px;background:transparent}
+.founders-list{display:flex;gap:18px;flex-wrap:wrap}
+.founder{background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.04);width:220px;text-align:center}
+.founder img{width:120px;height:120px;border-radius:999px;object-fit:cover;margin-bottom:8px}
+.founder h3{margin:6px 0 4px;font-size:16px}
+.founder p{margin:0;color:#6b7280;font-size:13px}

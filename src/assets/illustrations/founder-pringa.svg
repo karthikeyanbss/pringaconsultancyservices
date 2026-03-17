@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="100%" height="100%" fill="#f7fbff"/>
+  <g transform="translate(200,140)">
+    <circle cx="0" cy="0" r="80" fill="#fff" stroke="#e6f7ff" stroke-width="6"/>
+    <text x="0" y="12" font-family="Poppins, Arial" font-size="44" fill="#0f1724" text-anchor="middle">PR</text>
+  </g>
+  <text x="200" y="300" font-family="Inter, Arial" font-size="18" fill="#0f1724" text-anchor="middle">Pringa Ramavarman</text>
+  <text x="200" y="328" font-family="Inter, Arial" font-size="13" fill="#6b7280" text-anchor="middle">Co-founder • CTO</text>
+</svg>

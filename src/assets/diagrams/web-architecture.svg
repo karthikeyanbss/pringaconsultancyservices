@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <rect width="100%" height="100%" fill="#fbfdff"/>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="40" y="60" width="220" height="110" rx="10" fill="#fff" stroke="#e6f0ff"/>
+    <text x="60" y="90" fill="#0f1724" font-size="16">Web App (React / Angular)</text>
+
+    <rect x="340" y="60" width="220" height="110" rx="10" fill="#fff" stroke="#e6f0ff"/>
+    <text x="360" y="90" fill="#0f1724" font-size="16">API Gateway / Backend</text>
+
+    <rect x="640" y="60" width="220" height="110" rx="10" fill="#fff" stroke="#e6f0ff"/>
+    <text x="660" y="90" fill="#0f1724" font-size="16">Cloud DB & Storage</text>
+
+    <path d="M260 115 L340 115" stroke="#9fbefb" stroke-width="3" stroke-linecap="round"/>
+    <path d="M560 115 L640 115" stroke="#9fbefb" stroke-width="3" stroke-linecap="round"/>
+
+    <g transform="translate(120,220)">
+      <rect x="0" y="0" width="200" height="120" rx="10" fill="#fff" stroke="#e6f0ff"/>
+      <text x="16" y="24" fill="#0f1724" font-size="14">CDN / Edge</text>
+    </g>
+
+    <g transform="translate(440,220)">
+      <rect x="0" y="0" width="200" height="120" rx="10" fill="#fff" stroke="#e6f0ff"/>
+      <text x="16" y="24" fill="#0f1724" font-size="14">Monitoring & Logging</text>
+    </g>
+  </g>
+</svg>

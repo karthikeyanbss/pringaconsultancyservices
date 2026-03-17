@@ -1,0 +1,5 @@
+.service-card{background:#fff;border-radius:8px;padding:18px;box-shadow:0 6px 18px rgba(16,24,40,0.06);display:flex;flex-direction:column;gap:8px}
+.service-card .icon{font-size:28px}
+.service-card h3{margin:0}
+.service-card p{color:#374151;margin:0}
+.service-card .learn{margin-top:auto;color:#0078D4;text-decoration:none}

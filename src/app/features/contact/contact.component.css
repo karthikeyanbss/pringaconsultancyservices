@@ -1,0 +1,2 @@
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:24px}
+.contact-info{background:#fff;padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}

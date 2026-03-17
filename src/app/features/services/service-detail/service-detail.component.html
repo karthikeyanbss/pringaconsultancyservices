@@ -1,0 +1,20 @@
+<section class="service-detail">
+  <h2>{{ service?.title }}</h2>
+  <p>{{ service?.description }}</p>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>Feature 1</li>
+    <li>Feature 2</li>
+    <li>Feature 3</li>
+  </ul>
+
+  <h3>Tech Stack</h3>
+  <app-cloud-badge provider="azure"></app-cloud-badge>
+  <app-cloud-badge provider="aws"></app-cloud-badge>
+  <app-cloud-badge provider="gcp"></app-cloud-badge>
+
+  <div class="cta">
+    <a routerLink="/contact" class="btn primary">Contact Us</a>
+  </div>
+</section>

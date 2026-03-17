@@ -1,0 +1,6 @@
+<article class="service-card">
+  <div class="icon">{{ service.icon || '☁️' }}</div>
+  <h3>{{ service.title }}</h3>
+  <p>{{ service.summary }}</p>
+  <a [routerLink]="['/services', service.id]" class="learn">Learn more</a>
+</article>

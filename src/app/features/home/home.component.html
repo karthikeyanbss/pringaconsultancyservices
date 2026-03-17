@@ -1,0 +1,36 @@
+<div class="home-root">
+  <app-hero [title]="'Pringa Consultancy Services'" [subtitle]="'Enterprise IT Consultation & Cloud Solutions'"></app-hero>
+
+  <section class="services-grid">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <app-service-card *ngFor="let s of services" [service]="s"></app-service-card>
+    </div>
+  </section>
+
+  <section class="founders" aria-labelledby="founders-heading">
+    <h2 id="founders-heading">Founders</h2>
+    <div class="founders-list">
+      <article class="founder">
+        <picture>
+          <source media="(max-width:600px)" srcset="assets/illustrations/pringa-300.webp" type="image/webp">
+          <source media="(max-width:600px)" srcset="assets/illustrations/pringa-300.png">
+          <source srcset="assets/illustrations/pringa.webp" type="image/webp">
+          <img src="assets/illustrations/pringa.jpg" alt="Pringa Ramavarman" onerror="this.onerror=null; this.src='assets/illustrations/founder-pringa.svg'" width="120" height="120"/>
+        </picture>
+        <h3>Pringa Ramavarman</h3>
+        <p>Co-founder • CTO</p>
+      </article>
+      <article class="founder">
+        <picture>
+          <source media="(max-width:600px)" srcset="assets/illustrations/ramavarman-300.webp" type="image/webp">
+          <source media="(max-width:600px)" srcset="assets/illustrations/ramavarman-300.png">
+          <source srcset="assets/illustrations/ramavarman.webp" type="image/webp">
+          <img src="assets/illustrations/ramavarman.jpg" alt="Ramavarman Varagunapandian" onerror="this.onerror=null; this.src='assets/illustrations/founder-ramavarman.svg'" width="120" height="120"/>
+        </picture>
+        <h3>Ramavarman Varagunapandian</h3>
+        <p>Co-founder • CEO</p>
+      </article>
+    </div>
+  </section>
+</div>
