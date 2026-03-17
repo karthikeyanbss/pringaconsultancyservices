@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-async function run() {
-  const dir = path.join(__dirname, '..', 'src', 'assets', 'illustrations');
-  const candidates = ['pringa.jpg', 'pringa.jpeg', 'pringa.png'];
+const dir = path.join(__dirname, '..', 'src', 'assets', 'illustrations');
+
+async function processFounder(name, candidates) {
   let srcFile = null;
   for (const c of candidates) {
     const p = path.join(dir, c);
@@ -12,40 +12,40 @@ async function run() {
   }
 
   if (!srcFile) {
-    console.error('Source image not found. Place Pringa image as one of:', candidates.join(', '));
-    process.exit(1);
+    console.warn(`[${name}] Source image not found. Expected one of: ${candidates.join(', ')} — skipping.`);
+    return;
   }
 
-  const outPng = path.join(dir, 'pringa-300.png');
-  try {
-    await sharp(srcFile)
-      .rotate() // respect EXIF
-      .resize(300, 300, { fit: 'cover', position: 'centre' })
-      .png({ quality: 90 })
-      .toFile(outPng);
-    console.log('Created', outPng);
+  console.log(`[${name}] Processing ${srcFile}...`);
 
-    // Also create a WebP optimized version (300x300)
-    const outWebp300 = path.join(dir, 'pringa-300.webp');
-    await sharp(srcFile)
-      .rotate()
-      .resize(300, 300, { fit: 'cover', position: 'centre' })
-      .webp({ quality: 80 })
-      .toFile(outWebp300);
-    console.log('Created', outWebp300);
+  const base = path.join(dir, name);
 
-    // Create a larger WebP (responsive fallback)
-    const outWebpLarge = path.join(dir, 'pringa.webp');
-    await sharp(srcFile)
-      .rotate()
-      .resize(1000, null, { fit: 'inside' })
-      .webp({ quality: 80 })
-      .toFile(outWebpLarge);
-    console.log('Created', outWebpLarge);
-  } catch (err) {
-    console.error('Error processing image:', err);
-    process.exit(1);
-  }
+  await sharp(srcFile)
+    .rotate()
+    .resize(300, 300, { fit: 'cover', position: 'centre' })
+    .png({ quality: 90 })
+    .toFile(`${base}-300.png`);
+  console.log(`[${name}] Created ${base}-300.png`);
+
+  await sharp(srcFile)
+    .rotate()
+    .resize(300, 300, { fit: 'cover', position: 'centre' })
+    .webp({ quality: 80 })
+    .toFile(`${base}-300.webp`);
+  console.log(`[${name}] Created ${base}-300.webp`);
+
+  await sharp(srcFile)
+    .rotate()
+    .resize(1000, null, { fit: 'inside' })
+    .webp({ quality: 80 })
+    .toFile(`${base}.webp`);
+  console.log(`[${name}] Created ${base}.webp`);
 }
 
-run();
+async function run() {
+  await processFounder('pringa',      ['pringa.jpg', 'pringa.jpeg', 'pringa.png']);
+  await processFounder('ramavarman',  ['ramavarman.jpg', 'ramavarman.jpeg', 'ramavarman.png']);
+  console.log('Done!');
+}
+
+run().catch(err => { console.error(err); process.exit(1); });
