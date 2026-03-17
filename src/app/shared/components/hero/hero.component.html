@@ -1,12 +1,26 @@
 <section class="hero">
-  <div class="hero-content">
-    <h1>{{ title }}</h1>
-    <p class="subtitle">{{ subtitle }}</p>
-    <div class="hero-ctas">
-      <a class="btn primary" href="/contact">Request a Quote</a>
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-label">Enterprise IT &amp; Cloud Partner</p>
+      <h1>Transform Your Business<br>with <span class="grad">Advanced IT</span><br>Services</h1>
+      <p class="subtitle">{{ subtitle }}</p>
+      <div class="hero-ctas">
+        <a class="btn primary" routerLink="/contact">Book a Free Consultation</a>
+        <a class="btn ghost" routerLink="/services">Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>50+</strong><span>Projects Delivered</span></div>
+        <div class="hero-stat"><strong>3</strong><span>Cloud Platforms</span></div>
+        <div class="hero-stat"><strong>100%</strong><span>Client Satisfaction</span></div>
+      </div>
     </div>
-  </div>
-  <div class="hero-art">
-    <img src="/assets/diagrams/cloud-hero.svg" alt="cloud illustration" />
+    <div class="hero-art">
+      <img src="assets/diagrams/retail-cosmos-architecture.svg"
+           alt="Retail &amp; e-commerce Azure architecture"
+           class="arch-diagram" />
+      <img src="assets/diagrams/responsive-showcase.svg"
+           alt="Responsive design on every device"
+           class="device-showcase" />
+    </div>
   </div>
 </section>

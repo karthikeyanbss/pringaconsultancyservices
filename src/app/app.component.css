@@ -3,3 +3,26 @@ h1 {
   font-size: 28px;
   margin: 0 0 8px 0;
 }
+
+.app-shell{display:flex;flex-direction:column;min-height:100vh}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(8,11,20,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.site-header .container{max-width:1160px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;background:linear-gradient(135deg,#4f8ef7,#a259ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.main-nav{display:flex;align-items:center;gap:28px}
+.main-nav a{color:#8896a5;text-decoration:none;font-size:15px;transition:color .2s}
+.main-nav a:hover{color:#f1f5f9}
+.main-nav .nav-cta{background:linear-gradient(135deg,#4f8ef7,#a259ff);color:#fff;padding:9px 18px;border-radius:8px;font-weight:600;font-size:14px;-webkit-text-fill-color:#fff}
+
+/* main */
+.site-main{flex:1}
+
+/* footer */
+.site-footer{background:#0e1120;border-top:1px solid rgba(255,255,255,0.06)}
+.footer-grid{max-width:1160px;margin:0 auto;padding:52px 28px 32px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#8896a5;margin:10px 0 0;font-size:14px;line-height:1.7;max-width:240px}
+.footer-col h4{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8896a5;margin-bottom:14px}
+.footer-col a{display:block;color:#8896a5;text-decoration:none;font-size:14px;margin-bottom:8px;transition:color .2s}
+.footer-col a:hover{color:#f1f5f9}
+.footer-bottom{max-width:1160px;margin:0 auto;padding:18px 28px;border-top:1px solid rgba(255,255,255,0.06);color:#8896a5;font-size:13px;display:flex;justify-content:space-between}

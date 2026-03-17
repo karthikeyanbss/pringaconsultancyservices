@@ -1,6 +1,47 @@
-<section class="services-list">
-  <h2>Services</h2>
-  <div class="grid">
-    <app-service-card *ngFor="let s of services" [service]="s"></app-service-card>
-  </div>
-</section>
+<div class="services-root">
+  <!-- Hero Section -->
+  <section class="services-hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-label">What We Offer</p>
+        <h1>Explore Our Range of <span class="grad">Services</span></h1>
+        <p class="hero-subtitle">From cloud architecture to AI-powered solutions, we deliver enterprise-grade technology across every platform.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="section services-section">
+    <div class="container">
+      <div class="services-grid">
+        <div class="service-item" *ngFor="let service of services" [routerLink]="['/services', service.id]">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+                <path d="M20 30C20 24.48 24.48 20 30 20C35.52 20 40 24.48 40 30C40 35.52 35.52 40 30 40C24.48 40 20 35.52 20 30Z" 
+                      stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="30" cy="30" r="4" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>{{ service.title }}</h3>
+            <p class="service-summary">{{ service.summary }}</p>
+            <p class="service-description">{{ service.description }}</p>
+            <a href="javascript:void(0)" class="service-link">Explore Service →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Let's discuss how our services can drive growth for your organization.</p>
+        <a routerLink="/contact" class="btn primary">Schedule a Consultation</a>
+      </div>
+    </div>
+  </section>
+</div>

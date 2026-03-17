@@ -1,12 +1,49 @@
 /* Global styles for the Angular base project */
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+/* ============================================================
+   PRINGA CONSULTANCY SERVICES — DARK MODERN THEME
+   ============================================================ */
+
+:root{
+  --bg:#080b14;
+  --surface:#0e1120;
+  --card:#121626;
+  --border: rgba(255,255,255,0.07);
+  --primary:#4f8ef7;
+  --primary-glow:rgba(79,142,247,0.25);
+  --accent:#a259ff;
+  --accent-glow:rgba(162,89,255,0.2);
+  --text:#f1f5f9;
+  --muted:#8896a5;
+  --gradient: linear-gradient(135deg,#4f8ef7 0%,#a259ff 100%);
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+*, *::before, *::after{box-sizing:border-box}
+
+html, body {
+  height:100%;
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
 }
+
+/* ── layout helpers ───────────────────────── */
+.container{max-width:1160px;margin:0 auto;padding:0 28px}
+.section{padding:80px 0}
+.section-label{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--primary);margin-bottom:12px}
+.section-title{font-family:'Poppins',sans-serif;font-size:36px;font-weight:700;line-height:1.15;margin:0 0 16px}
+.section-title span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-sub{color:var(--muted);max-width:560px;margin:0 0 36px;line-height:1.7}
+.muted{color:var(--muted)}
+
+/* ── buttons ──────────────────────────────── */
+.btn{display:inline-block;padding:13px 26px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;cursor:pointer;border:none;transition:opacity .2s,transform .15s}
+.btn:hover{opacity:.88;transform:translateY(-1px)}
+.btn.primary{background:var(--gradient);color:#fff;box-shadow:0 8px 24px var(--primary-glow)}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn.ghost:hover{border-color:var(--primary);color:var(--primary)}
+
+/* ── dividers / glass cards ───────────────── */
+.glass-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px}
+

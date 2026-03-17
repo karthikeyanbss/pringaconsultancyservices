@@ -1,4 +1,48 @@
-<div style="text-align:center;">
-  <h1>{{ title }}</h1>
-  <p>Angular 18 base project created.</p>
+<div class="app-shell">
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" routerLink="/">Pringa Consultancy Services<span style="opacity:.5">CS</span></a>
+      <nav class="main-nav">
+        <a routerLink="/">Home</a>
+        <a routerLink="/services">Services</a>
+        <a routerLink="/contact">Contact</a>
+        <a class="nav-cta" routerLink="/contact">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" routerLink="/">PringaCS</a>
+        <p>Enterprise IT Consultation &amp; Cloud Solutions. Halifax, Canada.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a routerLink="/services/web">Web Development</a>
+        <a routerLink="/services/mobile">Mobile Apps</a>
+        <a routerLink="/services/cloud">Cloud Solutions</a>
+        <a routerLink="/services/genai">Generative AI</a>
+      </div>
+      <div class="footer-col">
+        <h4>Cloud</h4>
+        <a routerLink="/services/azure">Azure</a>
+        <a routerLink="/services/aws">AWS</a>
+        <a routerLink="/services/gcp">GCP</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a routerLink="/contact">Contact Us</a>
+        <a href="#founders">Founders</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Pringa Consultancy Services · 115 Lier Ridge, Halifax, B3P 0E1</span>
+      <span>Azure · AWS · GCP Partner</span>
+    </div>
+  </footer>
 </div>

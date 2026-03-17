@@ -1,20 +1,85 @@
-<section class="service-detail">
-  <h2>{{ service?.title }}</h2>
-  <p>{{ service?.description }}</p>
+<div class="service-detail-root" *ngIf="service">
+  <!-- Hero Section -->
+  <section class="service-hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <p class="hero-label">Our Services</p>
+      <h1>{{ service.title }}</h1>
+      <p class="hero-subtitle">{{ service.subtitle }}</p>
+      <p class="hero-description">{{ service.heroDescription }}</p>
+      <a href="javascript:void(0)" class="btn primary scroll-cta">Learn More</a>
+    </div>
+  </section>
 
-  <h3>Key Features</h3>
-  <ul>
-    <li>Feature 1</li>
-    <li>Feature 2</li>
-    <li>Feature 3</li>
-  </ul>
+  <!-- Overview Section -->
+  <section class="section overview-section">
+    <div class="container-narrow">
+      <h2>Overview</h2>
+      <p class="section-description">{{ service.fullDescription }}</p>
+    </div>
+  </section>
 
-  <h3>Tech Stack</h3>
-  <app-cloud-badge provider="azure"></app-cloud-badge>
-  <app-cloud-badge provider="aws"></app-cloud-badge>
-  <app-cloud-badge provider="gcp"></app-cloud-badge>
+  <!-- Key Features Section -->
+  <section class="section features-section">
+    <div class="container-narrow">
+      <h2>Key Features</h2>
+      <div class="features-list">
+        <div class="feature-item" *ngFor="let feature of service.keyFeatures">
+          <div class="feature-icon">✓</div>
+          <div class="feature-content">
+            <p>{{ feature }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="cta">
-    <a routerLink="/contact" class="btn primary">Contact Us</a>
-  </div>
-</section>
+  <!-- Tech Stack Section -->
+  <section class="section tech-section">
+    <div class="container-narrow">
+      <h2>Technology Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-item" *ngFor="let tech of service.techStack">
+          <span class="tech-tag">{{ tech }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Sections -->
+  <section class="section" *ngFor="let section of service.sections">
+    <div class="container-narrow">
+      <div class="content-section">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.content }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cloud Providers -->
+  <section class="section providers-section">
+    <div class="container-narrow">
+      <h2>Cloud Platforms</h2>
+      <p class="section-subtitle">Available on these cloud platforms</p>
+      <div class="providers-grid">
+        <app-cloud-badge *ngFor="let provider of service.providers" [provider]="provider"></app-cloud-badge>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-final">
+    <div class="container-narrow">
+      <h2>Ready to Get Started?</h2>
+      <p>Let's discuss how {{ service.title }} can transform your business.</p>
+      <a routerLink="/contact" class="btn primary large">{{ service.cta }}</a>
+    </div>
+  </section>
+
+  <!-- Back to Services Link -->
+  <section class="section back-link">
+    <div class="container-narrow">
+      <a routerLink="/services" class="link-back">← Back to Services</a>
+    </div>
+  </section>
+</div>

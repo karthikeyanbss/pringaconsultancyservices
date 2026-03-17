@@ -1,36 +1,117 @@
 <div class="home-root">
-  <app-hero [title]="'Pringa Consultancy Services'" [subtitle]="'Enterprise IT Consultation & Cloud Solutions'"></app-hero>
 
-  <section class="services-grid">
-    <h2>Our Services</h2>
-    <div class="grid">
-      <app-service-card *ngFor="let s of services" [service]="s"></app-service-card>
+  <!-- HERO -->
+  <app-hero
+    [title]="'Pringa Consultancy Services'"
+    [subtitle]="'We build enterprise-grade cloud solutions, AI integrations, and digital products that scale — on Azure, AWS, and GCP.'">
+  </app-hero>
+
+  <!-- TRUSTED BY LOGOS -->
+  <section class="trusted-strip">
+    <div class="container">
+      <p class="strip-label">Trusted cloud platforms &amp; partners</p>
+      <div class="logos-row">
+        <img src="assets/icons/azure.svg" alt="Microsoft Azure" />
+        <span class="logo-text">Microsoft Azure</span>
+        <img src="assets/icons/aws.svg" alt="Amazon AWS" />
+        <span class="logo-text">Amazon AWS</span>
+        <img src="assets/icons/gcp.svg" alt="Google Cloud" />
+        <span class="logo-text">Google Cloud</span>
+      </div>
     </div>
   </section>
 
-  <section class="founders" aria-labelledby="founders-heading">
-    <h2 id="founders-heading">Founders</h2>
-    <div class="founders-list">
-      <article class="founder">
-        <picture>
-          <source media="(max-width:600px)" srcset="assets/illustrations/pringa-300.webp" type="image/webp">
-          <source media="(max-width:600px)" srcset="assets/illustrations/pringa-300.png">
-          <source srcset="assets/illustrations/pringa.webp" type="image/webp">
-          <img src="assets/illustrations/pringa.jpg" alt="Pringa Ramavarman" onerror="this.onerror=null; this.src='assets/illustrations/founder-pringa.svg'" width="120" height="120"/>
-        </picture>
-        <h3>Pringa Ramavarman</h3>
-        <p>Co-founder • CTO</p>
-      </article>
-      <article class="founder">
-        <picture>
-          <source media="(max-width:600px)" srcset="assets/illustrations/ramavarman-300.webp" type="image/webp">
-          <source media="(max-width:600px)" srcset="assets/illustrations/ramavarman-300.png">
-          <source srcset="assets/illustrations/ramavarman.webp" type="image/webp">
-          <img src="assets/illustrations/ramavarman.jpg" alt="Ramavarman Varagunapandian" onerror="this.onerror=null; this.src='assets/illustrations/founder-ramavarman.svg'" width="120" height="120"/>
-        </picture>
-        <h3>Ramavarman Varagunapandian</h3>
-        <p>Co-founder • CEO</p>
-      </article>
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <p class="section-label">What we do</p>
+      <h2 class="section-title">Explore Our Range of <span>Services</span></h2>
+      <p class="section-sub">From cloud architecture to AI-powered SaaS platforms, we cover the entire enterprise technology spectrum.</p>
+      <div class="services-grid">
+        <app-service-card *ngFor="let s of services" [service]="s"></app-service-card>
+      </div>
     </div>
   </section>
+
+  <!-- HOW WE DELIVER -->
+  <section class="section process-section">
+    <div class="container">
+      <p class="section-label">Our Process</p>
+      <h2 class="section-title">How we Deliver <span>IT Services</span></h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <h4>Discover</h4>
+          <p class="muted">Understand your goals, system landscape, and constraints in depth.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <h4>Define</h4>
+          <p class="muted">Architect solutions and select the optimal cloud platform and tech stack.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <h4>Develop</h4>
+          <p class="muted">Implement secure, scalable cloud-native services with best practices.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <h4>Deploy</h4>
+          <p class="muted">CI/CD pipelines, monitoring, and ongoing managed operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDERS -->
+  <section class="section founders-section" id="founders">
+    <div class="container">
+      <p class="section-label">The Team</p>
+      <h2 class="section-title">Meet the <span>Founders</span></h2>
+      <div class="founders-list">
+        <article class="founder-card">
+          <div class="founder-img-wrap">
+            <picture>
+              <source media="(max-width:600px)" srcset="assets/illustrations/pringa-300.webp" type="image/webp">
+              <source media="(max-width:600px)" srcset="assets/illustrations/pringa-300.png">
+              <source srcset="assets/illustrations/pringa.webp" type="image/webp">
+              <img src="assets/illustrations/pringa.jpg" alt="Pringa Ramavarman"
+                   onerror="this.onerror=null; this.src='assets/illustrations/founder-pringa.svg'"
+                   loading="lazy" decoding="async" width="160" height="160"/>
+            </picture>
+          </div>
+          <h3>Pringa Ramavarman</h3>
+          <p class="founder-role">Co-founder &amp; CTO</p>
+          <p class="founder-bio muted">Cloud architect with deep expertise in Azure and enterprise AI integrations.</p>
+        </article>
+        <article class="founder-card">
+          <div class="founder-img-wrap">
+            <picture>
+              <source media="(max-width:600px)" srcset="assets/illustrations/ramavarman-300.webp" type="image/webp">
+              <source media="(max-width:600px)" srcset="assets/illustrations/ramavarman-300.png">
+              <source srcset="assets/illustrations/ramavarman.webp" type="image/webp">
+              <img src="assets/illustrations/ramavarman.jpg" alt="Ramavarman Varagunapandian"
+                   onerror="this.onerror=null; this.src='assets/illustrations/founder-ramavarman.svg'"
+                   loading="lazy" decoding="async" width="160" height="160"/>
+            </picture>
+          </div>
+          <h3>Ramavarman Varagunapandian</h3>
+          <p class="founder-role">Co-founder &amp; CEO</p>
+          <p class="founder-bio muted">Business strategist driving digital transformation across enterprise clients.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Discover the power of our IT Services<br>for your business</h2>
+      <a class="btn primary" routerLink="/contact">Get Started Today</a>
+    </div>
+  </section>
+
 </div>
