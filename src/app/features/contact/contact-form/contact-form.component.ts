@@ -15,15 +15,15 @@ export class ContactFormComponent implements OnInit {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.pattern(/^[0-9+()\-\s]{7,20}$/)]],
-      message: ['', [Validators.required, Validators.minLength(10)]]
+      subject: [''],
+      message: ['', [Validators.minLength(10)]]
     });
   }
 
   submit() {
     if (this.contactForm.valid) {
       console.log('Contact form submit', this.contactForm.value);
-      alert('Thanks! We received your message (demo).');
+      alert('Thanks! We received your message. Our team will get back to you soon!');
       this.contactForm.reset();
     } else {
       this.contactForm.markAllAsTouched();
