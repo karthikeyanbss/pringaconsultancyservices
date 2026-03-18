@@ -2,12 +2,15 @@
   <header class="site-header">
     <div class="container">
       <a class="logo" routerLink="/">Pringa Consultancy Services<span style="opacity:.5">CS</span></a>
-      <nav class="main-nav">
-        <a routerLink="/">Home</a>
-        <a routerLink="/services">Services</a>
-        <a routerLink="/contact">Contact</a>
-        <a class="nav-cta" routerLink="/contact">Get Started</a>
+      <nav class="main-nav" [class.active]="isMobileMenuOpen">
+        <a routerLink="/" (click)="closeMobileMenu()">Home</a>
+        <a routerLink="/services" (click)="closeMobileMenu()">Services</a>
+        <a routerLink="/contact" (click)="closeMobileMenu()">Contact</a>
+        <a class="nav-cta" routerLink="/contact" (click)="closeMobileMenu()">Get Started</a>
       </nav>
+      <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+        {{ isMobileMenuOpen ? '✕' : '☰' }}
+      </button>
     </div>
   </header>
 

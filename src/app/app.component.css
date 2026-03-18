@@ -15,7 +15,40 @@ h1 {
 .main-nav a:hover{color:#f1f5f9}
 .main-nav .nav-cta{background:linear-gradient(135deg,#4f8ef7,#a259ff);color:#fff;padding:9px 18px;border-radius:8px;font-weight:600;font-size:14px;-webkit-text-fill-color:#fff}
 
-/* main */
+/* mobile menu button */
+.mobile-menu-btn{display:none;background:none;border:none;color:#f1f5f9;font-size:24px;cursor:pointer;padding:8px}
+
+/* mobile responsive */
+@media (max-width: 768px) {
+  .site-header .container{padding:14px 16px}
+  
+  .main-nav{display:none;position:absolute;top:52px;left:0;right:0;flex-direction:column;gap:8px;background:#121626;border-bottom:1px solid rgba(255,255,255,0.06);padding:16px;z-index:99}
+  
+  .main-nav.active{display:flex}
+  
+  .main-nav a{padding:10px 8px;font-size:14px}
+  
+  .main-nav .nav-cta{align-self:flex-start;width:auto}
+  
+  .mobile-menu-btn{display:block}
+
+  .logo{font-size:16px}
+
+  .footer-grid{grid-template-columns:1fr;gap:20px;padding:32px 16px}
+  
+  .footer-bottom{flex-direction:column;gap:8px;padding:16px}
+}
+
+@media (max-width: 480px) {
+  .site-header .container{padding:12px 12px}
+  
+  .logo{font-size:14px}
+
+  .main-nav{top:48px;padding:12px;gap:4px}
+
+  .mobile-menu-btn{font-size:20px;padding:4px}
+}
+
 .site-main{flex:1}
 
 /* footer */

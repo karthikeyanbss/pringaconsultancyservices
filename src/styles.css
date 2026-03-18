@@ -47,3 +47,132 @@ html, body {
 /* ── dividers / glass cards ───────────────── */
 .glass-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px}
 
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE MOBILE DESIGN (max-width: 768px)
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .section-title { font-size: 28px; }
+  .section { padding: 60px 0; }
+}
+
+@media (max-width: 768px) {
+  /* ── base typography ─────────────────────────── */
+  .container { padding: 0 16px; }
+  .section { padding: 48px 0; }
+  .section-title { font-size: 24px; line-height: 1.2; }
+  .section-sub { font-size: 14px; max-width: 100%; }
+  .section-label { font-size: 11px; margin-bottom: 8px; }
+
+  /* ── buttons ──────────────────────────────── */
+  .btn { padding: 11px 20px; font-size: 14px; width: 100%; text-align: center; }
+  .btn:active { transform: translateY(0); }
+
+  /* ── navigation ───────────────────────────── */
+  nav { padding: 12px 16px !important; }
+  nav a, nav button { font-size: 13px; margin: 0 8px; }
+
+  /* ── hero section ────────────────────────── */
+  .hero-content h1 { font-size: 28px !important; }
+  .hero-content p { font-size: 14px !important; }
+
+  /* ── grid layouts ────────────────────────── */
+  .services-grid,
+  .features-grid,
+  .items-grid { grid-template-columns: 1fr !important; }
+
+  /* ── flex layouts ────────────────────────── */
+  .flex-row { flex-direction: column; }
+  .flex-col { width: 100%; }
+
+  /* ── two-column layouts ──────────────────── */
+  .grid-2 { grid-template-columns: 1fr !important; }
+  .two-col { flex-direction: column !important; }
+  .left-col, .right-col { width: 100% !important; margin: 0 !important; }
+  .left-col { margin-bottom: 24px !important; }
+
+  /* ── cards ────────────────────────────── */
+  .glass-card { padding: 20px; }
+  .card { padding: 20px !important; }
+
+  /* ── founders ────────────────────────────── */
+  .founders-list { 
+    flex-direction: column;
+    gap: 16px;
+  }
+  .founder-card { 
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  /* ── process steps ────────────────────────────── */
+  .process-steps {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .process-step {
+    min-width: 100%;
+    flex: none;
+  }
+  .step-arrow { display: none; }
+
+  /* ── contact form ────────────────────────── */
+  .form-group { margin-bottom: 16px; }
+  .form-input, .form-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+  .form-label { font-size: 13px; }
+
+  /* ── images ──────────────────────────────── */
+  img { max-width: 100%; height: auto; }
+
+  /* ── text sizes ──────────────────────────── */
+  h1 { font-size: 24px !important; }
+  h2 { font-size: 20px !important; }
+  h3 { font-size: 16px !important; }
+  h4 { font-size: 14px !important; }
+  p { font-size: 14px; }
+  small { font-size: 12px; }
+
+  /* ── spacing ────────────────────────────── */
+  .mt-1 { margin-top: 8px !important; }
+  .mt-2 { margin-top: 16px !important; }
+  .mt-3 { margin-top: 24px !important; }
+  .mb-1 { margin-bottom: 8px !important; }
+  .mb-2 { margin-bottom: 16px !important; }
+  .mb-3 { margin-bottom: 24px !important; }
+  .p-1 { padding: 8px !important; }
+  .p-2 { padding: 16px !important; }
+  .p-3 { padding: 24px !important; }
+  .gap-1 { gap: 8px !important; }
+  .gap-2 { gap: 16px !important; }
+  .gap-3 { gap: 24px !important; }
+}
+
+@media (max-width: 480px) {
+  /* ── extra small screens ─────────────────────── */
+  .container { padding: 0 12px; }
+  .section { padding: 32px 0; }
+
+  .section-title { font-size: 18px; }
+  .section-sub { font-size: 13px; }
+
+  h1 { font-size: 18px !important; }
+  h2 { font-size: 16px !important; }
+  h3 { font-size: 14px !important; }
+  p { font-size: 13px; }
+
+  .btn { padding: 10px 16px; font-size: 13px; }
+
+  .glass-card { padding: 16px; margin-bottom: 12px; }
+
+  /* ── hide unnecessary elements ───────────────── */
+  .hide-mobile { display: none !important; }
+  
+  /* ── optimize sidebar ────────────────────────── */
+  aside { width: 100%; max-width: 100%; }
+}
+
