@@ -5,13 +5,14 @@ const nodemailer = require('nodemailer');
 // Initialize Firebase Admin SDK
 admin.initializeApp();
 
-// Initialize Nodemailer transporter
-// Using Gmail SMTP - requires app password (not regular password)
+// Initialize Nodemailer transporter with SpaceMail SMTP
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'mail.spacemail.com',
+  port: 465,
+  secure: true, // SSL encryption
   auth: {
-    user: process.env.GMAIL_EMAIL || 'karthikeyan.bss60@gmail.com',
-    pass: process.env.GMAIL_APP_PASSWORD || 'baskaran1'
+    user: functions.config().spacemail?.email || process.env.SPACEMAIL_EMAIL || 'sales@pringaconsultancyservices.com',
+    pass: functions.config().spacemail?.password || process.env.SPACEMAIL_PASSWORD || 'Rishi@28'
   }
 });
 
@@ -30,7 +31,7 @@ exports.sendContactNotificationEmail = functions.firestore
 
       // Email to sales team
       const salesMailOptions = {
-        from: process.env.GMAIL_EMAIL || 'noreply@pringaconsultancyservices.com',
+        from: functions.config().spacemail?.email || 'sales@pringaconsultancyservices.com',
         to: 'sales@pringaconsultancyservices.com',
         subject: `New Contact Form Submission: ${data.subject || 'General Inquiry'}`,
         html: `
@@ -61,7 +62,7 @@ exports.sendContactNotificationEmail = functions.firestore
 
       // Confirmation email to user
       const userMailOptions = {
-        from: process.env.GMAIL_EMAIL || 'noreply@pringaconsultancyservices.com',
+        from: functions.config().spacemail?.email || 'sales@pringaconsultancyservices.com',
         to: data.email,
         subject: 'We received your message - Pringa Consultancy Services',
         html: `
